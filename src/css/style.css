@@ -5,6 +5,21 @@
     box-sizing: border-box;
 }
 
+/* ---- Animation CSS */
+@keyframes flashing {
+    0% {
+        opacity: .2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}
+
 /* ---- Starting Code */
 body {
     display: flex;
@@ -45,13 +60,13 @@ body {
 }
 
 .candidateAreaTitle,
-.candidateType {
+.candidateRole {
     height: 50px;
     display: flex;
     align-items: center;
 }
 
-.candidateType {
+.candidateRole {
     justify-content: center;
 }
 
@@ -69,27 +84,30 @@ body {
     font-size: 25px;
 }
 
-@keyframes flashingButton {
-    0% {
-        opacity: .2;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0.2;
-    }
-}
-
 .voteArea .number.active {
-    animation: flashingButton 1s infinite;
+    animation: flashing 1s infinite;
 }
 
 .candidateInfos {
     flex: 1;
     line-height: 30px;
+}
+
+/* Alert CSS */
+.alert {
+    font-size: 40px;
+    font-weight: bold;
+    animation: flashing 1s infinite;
+}
+
+.endAlert {
+    font-size: 70px;
+    font-weight: bold;
+    animation: flashing 1s infinite;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* - Candidate Right CSS */
