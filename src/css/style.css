@@ -72,6 +72,9 @@ body {
 
 .voteArea {
     height: 50px;
+    align-items: flex-start;
+    display: flex;
+    gap: 3px;
 }
 
 .voteArea .number {
