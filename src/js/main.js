@@ -7,7 +7,7 @@ const candidateInfos = document.querySelector('.candidateInfos')
 const instructionArea = document.querySelector('.instructionArea')
 const candidateAreaRight = document.querySelector('.candidateAreaRight')
 const voteArea = document.querySelector('.voteArea')
-// const keyboardButtons = document.querySelectorAll('.keyboardButton')
+const keyboardButtons = document.querySelectorAll('.keyboardButton')
 
 let currentStep = 0
 let typedNumbers = ''
@@ -33,41 +33,26 @@ function startStep() {
     instructionArea.style.display = 'none'
     candidateAreaRight.innerHTML = ''
     voteArea.innerHTML = numbersHTML;
-
-    // for (let i = 0; i < keyboardButtons.length; i++) {
-    //     keyboardButtons[i].addEventListener('click', function () {
-    //         let value = this.innerText;
-
-    //         if (value.length === 1) {
-    //             let numbers = document.querySelector('.number.active')
-
-    //             if (numbers !== null) {
-    //                 numbers.innerHTML = value
-    //                 typedNumbers = `${typedNumbers}${value}`;
-
-    //                 numbers.classList.remove('active')
-
-    //                 numbers.nextElementSibling !== null ? numbers.nextElementSibling.classList.add('active') : updateInterface()
-    //             }
-    //         }
-    //     })
-    // }
 }
 
-function clickNumber(n) {
-    let numbers = document.querySelector('.number.active')
+for (let i = 0; i < keyboardButtons.length; i++) {
+    keyboardButtons[i].addEventListener('click', function () {
+        let value = this.innerText;
 
-    if (numbers !== null) {
-        numbers.innerHTML = n
-        typedNumbers = `${typedNumbers}${n}`;
+        if (value.length === 1) {
+            let numbers = document.querySelector('.number.active')
 
-        numbers.classList.remove('active')
+            if (numbers !== null) {
+                numbers.innerHTML = value
+                typedNumbers = `${typedNumbers}${value}`;
 
-        numbers.nextElementSibling !== null ? numbers.nextElementSibling.classList.add('active') : updateInterface()
-    }
+                numbers.classList.remove('active')
+
+                numbers.nextElementSibling !== null ? numbers.nextElementSibling.classList.add('active') : updateInterface()
+            }
+        }
+    })
 }
-
-globalThis.clickNumber = clickNumber
 
 function updateInterface() {
     let step = steps[currentStep]
