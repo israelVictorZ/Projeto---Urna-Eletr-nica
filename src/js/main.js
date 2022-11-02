@@ -80,9 +80,9 @@ function updateInterface() {
 
         for (let i in candidate.images) {
             if (candidate.images[i].small) {
-                candidateImages += `<div class="candidateImg candidateSmall"> <img src="public/${candidate.images[i].url}" alt=""> ${candidate.images[i].subtitle} </div>`
+                candidateImages += `<div class="candidateImg candidateSmall"> <img src="/${candidate.images[i].url}" alt=""> ${candidate.images[i].subtitle} </div>`
             } else {
-                candidateImages += `<div class="candidateImg"> <img src="public/${candidate.images[i].url}" alt=""> ${candidate.images[i].subtitle} </div>`
+                candidateImages += `<div class="candidateImg"> <img src="/${candidate.images[i].url}" alt=""> ${candidate.images[i].subtitle} </div>`
             }
         }
 
